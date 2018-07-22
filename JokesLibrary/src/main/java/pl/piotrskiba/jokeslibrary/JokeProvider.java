@@ -1,5 +1,4 @@
-package pl.piotrskiba.jokeslib;
-
+package pl.piotrskiba.jokeslibrary;
 import java.util.Random;
 
 public class JokeProvider {

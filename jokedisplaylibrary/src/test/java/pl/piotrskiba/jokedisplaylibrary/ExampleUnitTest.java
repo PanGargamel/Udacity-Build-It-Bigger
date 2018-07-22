@@ -1,4 +1,4 @@
-package pl.piotrskiba.jokeslib;
+package pl.piotrskiba.jokedisplaylibrary;
 
 import org.junit.Test;
 

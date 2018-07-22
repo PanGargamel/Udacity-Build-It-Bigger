@@ -6,14 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
-import pl.piotrskiba.jokeslib.JokeProvider;
-
+import pl.piotrskiba.jokedisplaylibrary.JokeDisplayActivity;
+import pl.piotrskiba.jokeslibrary.JokeProvider;
 
 public class MainActivity extends AppCompatActivity {
-
-    private Toast mToast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,11 +45,9 @@ public class MainActivity extends AppCompatActivity {
         JokeProvider jokeProvider = new JokeProvider();
         String joke = jokeProvider.getRandomJoke();
 
-        if(mToast != null)
-            mToast.cancel();
-
-        mToast = Toast.makeText(this, joke, Toast.LENGTH_LONG);
-        mToast.show();
+        Intent intent = new Intent(this, JokeDisplayActivity.class);
+        intent.putExtra(Intent.EXTRA_TEXT, joke);
+        startActivity(intent);
     }
 
 

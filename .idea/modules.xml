@@ -3,9 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Build_It_Bigger.iml" filepath="$PROJECT_DIR$/Build_It_Bigger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JokesLibrary/JokesLibrary.iml" filepath="$PROJECT_DIR$/JokesLibrary/JokesLibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jokedisplaylibrary/jokedisplaylibrary.iml" filepath="$PROJECT_DIR$/jokedisplaylibrary/jokedisplaylibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/jokeslib/jokeslib.iml" filepath="$PROJECT_DIR$/jokeslib/jokeslib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
     </modules>
   </component>
 </project>

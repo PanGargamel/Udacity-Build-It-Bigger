@@ -1,4 +1,4 @@
-package pl.piotrskiba.jokeslib;
+package pl.piotrskiba.jokedisplaylibrary;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("pl.piotrskiba.jokeslib.test", appContext.getPackageName());
+        assertEquals("pl.piotrskiba.jokedisplaylibrary.test", appContext.getPackageName());
     }
 }
