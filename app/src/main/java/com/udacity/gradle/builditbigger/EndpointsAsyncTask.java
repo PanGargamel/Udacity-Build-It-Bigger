@@ -13,16 +13,20 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
 
-public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
+public class EndpointsAsyncTask extends AsyncTask<EndpointsAsyncTask.JokeLoadedCallback, Void, String> {
     private static MyApi myApiService = null;
     private Context context;
+    private JokeLoadedCallback mJokeLoadedCallback;
 
     public EndpointsAsyncTask(Context context) {
         this.context = context;
     }
 
     @Override
-    protected String doInBackground(Void... params) {
+    protected String doInBackground(JokeLoadedCallback... jokeLoadedCallbacks) {
+        if(jokeLoadedCallbacks.length > 0)
+            mJokeLoadedCallback = jokeLoadedCallbacks[0];
+
         if(myApiService == null) {  // Only do this once
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
@@ -54,5 +58,12 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
             MainActivity.mToast.cancel();
         MainActivity.mToast = Toast.makeText(context, result, Toast.LENGTH_LONG);
         MainActivity.mToast.show();
+
+        if(mJokeLoadedCallback != null)
+            mJokeLoadedCallback.loaded(result);
+    }
+
+    public interface JokeLoadedCallback{
+        void loaded(String result);
     }
 }
