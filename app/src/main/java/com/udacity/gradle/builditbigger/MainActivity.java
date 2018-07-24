@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_TEXT, joke);
         startActivity(intent);*/
 
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Piotr"));
+        new EndpointsAsyncTask().execute(this);
     }
 
 
