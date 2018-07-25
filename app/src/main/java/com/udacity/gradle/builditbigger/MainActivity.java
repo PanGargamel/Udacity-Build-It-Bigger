@@ -23,13 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     public static Toast mToast;
     public void tellJoke(View view) {
-        /*JokeProvider jokeProvider = new JokeProvider();
-        String joke = jokeProvider.getRandomJoke();
-
-        Intent intent = new Intent(this, JokeDisplayActivity.class);
-        intent.putExtra(Intent.EXTRA_TEXT, joke);
-        startActivity(intent);*/
-
         new EndpointsAsyncTask(this).execute();
     }
 
