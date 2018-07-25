@@ -1,6 +1,7 @@
 package com.udacity.gradle.builditbigger;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.util.Pair;
 import android.util.Log;
@@ -13,6 +14,8 @@ import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 
 import java.io.IOException;
+
+import pl.piotrskiba.jokedisplaylibrary.JokeDisplayActivity;
 
 public class EndpointsAsyncTask extends AsyncTask<EndpointsAsyncTask.JokeLoadedCallback, Void, String> {
     private static MyApi myApiService = null;
@@ -56,10 +59,10 @@ public class EndpointsAsyncTask extends AsyncTask<EndpointsAsyncTask.JokeLoadedC
 
     @Override
     protected void onPostExecute(String result) {
-        if(MainActivity.mToast != null)
-            MainActivity.mToast.cancel();
-        MainActivity.mToast = Toast.makeText(context, result, Toast.LENGTH_LONG);
-        MainActivity.mToast.show();
+
+        Intent intent = new Intent(context, JokeDisplayActivity.class);
+        intent.putExtra(Intent.EXTRA_TEXT, result);
+        context.startActivity(intent);
 
         if(mJokeLoadedCallback != null)
             mJokeLoadedCallback.loaded(result);
